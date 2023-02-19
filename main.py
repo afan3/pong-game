@@ -4,6 +4,10 @@ from ball import Ball
 from scoreboard import ScoreBoard
 import time
 
+def end_game():
+    global isGameOn
+    isGameOn = False
+
 screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=800, height=600)
@@ -20,6 +24,7 @@ screen.onkey(rPaddle.goUp, "Up")
 screen.onkey(rPaddle.goDown, "Down")
 screen.onkey(lPaddle.goUp, "w")
 screen.onkey(lPaddle.goDown, "s")
+screen.onkey(end_game, 'x')
 
 isGameOn = True
 while isGameOn:
